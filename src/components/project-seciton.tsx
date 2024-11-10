@@ -8,7 +8,7 @@ export const ProjectSection = ({projects, projectType}: {projects: Project[], pr
 
     return (
         <div className="flex flex-col gap-4">
-            <h2 className="flex flex-row text-xl opacity-50 gap-2 font-bold items-center text-primary">
+            <h2 className="flex flex-row text-xl opacity-80 gap-2 font-bold items-center text-primary">
                 {slugToLabel(projectType)}
             </h2>
             <div className="flex flex-row gap-4">

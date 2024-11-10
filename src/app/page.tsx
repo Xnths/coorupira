@@ -14,7 +14,7 @@ export default function Home() {
     {
       name: "Fazenda Esperança Verde",
       type: "agricultura_sustentável",
-      location: "12345-678",
+      location: { latitude: -23.5555, longitude: -46.6333 },
       agriculture_type: "Orgânico",
       farm_size: 12.5,
       number_of_employees: 7,
@@ -23,7 +23,7 @@ export default function Home() {
     {
       name: "Sítio Raízes da Terra",
       type: "producao_organica",
-      location: "98765-432",
+      location: { latitude: -22.9035, longitude: -43.2096 },
       agriculture_type: "Orgânico",
       farm_size: 72.0,
       number_of_employees: 17,
@@ -32,7 +32,7 @@ export default function Home() {
     {
       name: "Chácara Vale do Sol",
       type: "economia_de_subsistencia",
-      location: "13579-246",
+      location: { latitude: -21.7952, longitude: -47.3298 },
       agriculture_type: "Orgânico",
       farm_size: 13.3,
       number_of_employees: 3,
@@ -41,7 +41,7 @@ export default function Home() {
     {
       name: "Rancho Família Feliz",
       type: "agricultura_sustentável",
-      location: "24680-135",
+      location: { latitude: -25.4292, longitude: -49.2716 },
       agriculture_type: "Orgânico",
       farm_size: 29.1,
       number_of_employees: 5,
@@ -50,7 +50,7 @@ export default function Home() {
     {
       name: "Agroecológica Semente Viva",
       type: "producao_organica",
-      location: "11223-334",
+      location: { latitude: -20.3155, longitude: -40.3128 },
       agriculture_type: "Orgânico",
       farm_size: 41.6,
       number_of_employees: 8,
@@ -59,7 +59,7 @@ export default function Home() {
     {
       name: "Terra da Paz",
       type: "agricultura_sustentável",
-      location: "55667-778",
+      location: { latitude: -23.2975, longitude: -47.9299 },
       agriculture_type: "Orgânico",
       farm_size: 34.7,
       number_of_employees: 9,
@@ -68,7 +68,7 @@ export default function Home() {
     {
       name: "Sítio Recanto Natural",
       type: "producao_organica",
-      location: "99887-776",
+      location: { latitude: -19.9072, longitude: -44.2166 },
       agriculture_type: "Orgânico",
       farm_size: 75.8,
       number_of_employees: 19,
@@ -77,7 +77,7 @@ export default function Home() {
     {
       name: "Fazenda Pura Vida",
       type: "economia_de_subsistencia",
-      location: "44332-221",
+      location: { latitude: -22.3026, longitude: -48.0202 },
       agriculture_type: "Orgânico",
       farm_size: 23.2,
       number_of_employees: 5,
@@ -86,7 +86,7 @@ export default function Home() {
     {
       name: "Rancho Bela Vista",
       type: "agricultura_sustentável",
-      location: "66778-899",
+      location: { latitude: -19.8248, longitude: -43.9315 },
       agriculture_type: "Orgânico",
       farm_size: 30,
       number_of_employees: 12,
@@ -95,7 +95,7 @@ export default function Home() {
     {
       name: "Sítio Flor da Serra",
       type: "producao_organica",
-      location: "55443-221",
+      location: { latitude: -23.0355, longitude: -46.4931 },
       agriculture_type: "Orgânico",
       farm_size: 40,
       number_of_employees: 8,
@@ -118,7 +118,7 @@ export default function Home() {
         <Button type="submit">Pesquisar</Button>
       </form>
       <div className="flex flex-col gap-6">
-        <h2 className="flex flex-row text-2xl opacity-50 gap-2 font-bold items-center text-primary">
+        <h2 className="flex flex-row text-2xl gap-2 font-bold items-center text-primary">
           Projetos
         </h2>
         <div className="flex flex-col gap-4">
