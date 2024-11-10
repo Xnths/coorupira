@@ -19,14 +19,17 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [project.location]);
 
   return (
-    <Card className="w-[350px] h-[450px] cursor-pointer shadow-lg">
+    <Card className="w-[350px] h-[500px] cursor-pointer shadow-lg">
       <CardHeader>
         <CardTitle className="text-xl">{project.name}</CardTitle>
         <CardDescription>{project.description}</CardDescription>
       </CardHeader>
-      <CardContent className="flex flex-col opacity-50">
-        <span><strong>Tamanho da fazenda:</strong> {project.farm_size} km²</span>
-        <span><strong>Número de colaboradores:</strong> {project.number_of_employees}</span>
+      <CardContent className="flex flex-col gap-2">
+        <div className="opacity-50">
+            <span><strong>Tamanho da fazenda:</strong> {project.farm_size} km²</span>
+            <span><strong>Número de colaboradores:</strong> {project.number_of_employees}</span>
+        </div>
+        <span className="text-secondary text-2xl"><strong className="font-extrabold text-4xl">{project.sequestration}</strong> kg/ano</span>
       </CardContent>
       <CardFooter>
         {coordinates && (
