@@ -123,7 +123,6 @@ export default function Home() {
         </h2>
         <div className="flex flex-col gap-4">
           {sections.map(section => (
-            filteredProjects.length === 0 ? <></> :
             <ProjectSection key={section} projectType={section} projects={filteredProjects} />
           ))}
         </div>

@@ -12,9 +12,16 @@ export const ProjectSection = ({projects, projectType}: {projects: Project[], pr
                 {slugToLabel(projectType)}
             </h2>
             <div className="flex flex-row gap-4">
-                {filteredProjects.map(project => (
-                    <ProjectCard key={project.name} project={project} />
-                ))}
+                {
+                    filteredProjects.length === 0 ?
+                    (<div className="w-full h-[200px] flex flex-row justify-center items-center rounded-xl bg-black bg-opacity-10">
+                        <span>Nenhum projeto</span>
+                    </div>) :
+                    filteredProjects.map(project => (
+                        <ProjectCard key={project.name} project={project} />
+                    ))    
+                }
+                
             </div>
         </div>
     )
