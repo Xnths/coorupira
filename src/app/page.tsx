@@ -7,8 +7,7 @@ import { Project } from "@/lib/types/project";
 import { ProjectSection } from "@/components/project-seciton";
 import Image from "next/image";
 
-import { HeartHandshake } from "lucide-react"
-import { ProjectsProvider, useProjects } from "@/components/providers/projectProvider";
+import { ProjectsProvider } from "@/components/providers/projectProvider";
 import { ImpactBar } from "@/components/impact-bar";
 
 export default function Home() {
