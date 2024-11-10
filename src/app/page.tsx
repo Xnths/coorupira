@@ -1,6 +1,6 @@
 "use client"
 
-import { useForm, SubmitHandler, FieldValue, FieldValues } from "react-hook-form"
+import { useForm, SubmitHandler, FieldValues } from "react-hook-form"
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Project } from "@/lib/types/project";
