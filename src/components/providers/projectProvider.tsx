@@ -3,7 +3,7 @@ import { Project } from "@/lib/types/project";
 
 interface ProjectsContextType {
   selectedProjects: Project[];
-  setSelectedProjects: (projects: Project[]) => void;
+  setSelectedProjects: React.Dispatch<React.SetStateAction<Project[]>>
 }
 
 const ProjectsContext = createContext<ProjectsContextType | undefined>(undefined);
