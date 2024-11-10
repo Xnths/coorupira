@@ -8,12 +8,12 @@ import { ProjectSection } from "@/components/project-seciton";
 import Image from "next/image";
 
 import { HeartHandshake } from "lucide-react"
+import { ProjectsProvider, useProjects } from "@/components/providers/projectProvider";
+import { ImpactBar } from "@/components/impact-bar";
 
 export default function Home() {
   const { register, handleSubmit } = useForm();
   const sections = ["agricultura_sustentável", "economia_de_subsistencia", "producao_organica"];
-
-  const [selectedProjects, setSelectedProjects] = useState<Project[]>([])
 
   const projects: Project[] = [
     {
@@ -127,37 +127,31 @@ export default function Home() {
   }
 
   return (
-    <div className="grid grid-row-[auto,1fr]">
-      <div className="w-full bg-white flex flex-row px-6 py-2">
-        <Image src="/logo.png" width={100} height={100} alt="Logo da Curupira" />
-      </div>
-      <div className="grid grid-cols-[1fr,auto]">
-        <div className="p-6 flex flex-col gap-4">
-          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row w-full items-center gap-2">
-            <input className="h-[40px] rounded-xl w-[300px] px-4" {...register("search")} placeholder="Buscar pelo nome do projeto" />
-            <Button type="submit">Pesquisar</Button>
-          </form>
-          <div className="flex flex-col gap-6">
-            <h2 className="flex flex-row text-2xl gap-2 font-bold items-center text-primary">
-              Projetos
-            </h2>
-            <div className="flex flex-col gap-4">
-              {sections.map(section => (
-                <ProjectSection key={section} projectType={section} projects={filteredProjects} />
-              ))}
+    <ProjectsProvider>
+      <div className="grid grid-row-[auto,1fr]">
+        <div className="w-full bg-white flex flex-row px-6 py-2">
+          <Image src="/logo.png" width={100} height={100} alt="Logo da Curupira" />
+        </div>
+        <div className="grid grid-cols-[1fr,auto]">
+          <div className="p-6 flex flex-col gap-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-row w-full items-center gap-2">
+              <input className="h-[40px] rounded-xl w-[300px] px-4" {...register("search")} placeholder="Buscar pelo nome do projeto" />
+              <Button type="submit">Pesquisar</Button>
+            </form>
+            <div className="flex flex-col gap-6">
+              <h2 className="flex flex-row text-2xl gap-2 font-bold items-center text-primary">
+                Projetos
+              </h2>
+              <div className="flex flex-col gap-4">
+                {sections.map(section => (
+                  <ProjectSection key={section} projectType={section} projects={filteredProjects} />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="w-[300px] bg-white h-[800px] bg-opacity-80 p-4 grid grid-rows-[auto,1fr,auto] m-8 rounded-xl">
-          <h2 className="font-extrabold opacity-40 flex flex-row items-center gap-2"><HeartHandshake /> Projetos impactados</h2>
-          <div className="h-full">
-
-          </div>
-          <div className="flex flex-row w-full justify-end">
-            <Button className="bg-secondary">Impactar</Button>
-          </div>
+          <ImpactBar />
         </div>
       </div>
-    </div>
+    </ProjectsProvider>
   );
 }
