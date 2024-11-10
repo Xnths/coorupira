@@ -1,6 +1,6 @@
 "use client"
 
-import { useForm, SubmitHandler } from "react-hook-form"
+import { useForm, SubmitHandler, FieldValue, FieldValues } from "react-hook-form"
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Project } from "@/lib/types/project";
@@ -119,11 +119,11 @@ export default function Home() {
 
   const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
 
-  const onSubmit: SubmitHandler<{ search: string }> = ({ search }) => {
+  const onSubmit: SubmitHandler<FieldValues> = ({ search }) => {
     const searchTerm = search.toLowerCase().trim();
     const filtered = projects.filter(project => project.name.toLowerCase().includes(searchTerm));
     setFilteredProjects(filtered);
-  }
+  };
 
   return (
     <ProjectsProvider>
